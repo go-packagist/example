@@ -3,6 +3,7 @@ package bootstrap
 import (
 	"github.com/go-packagist/framework/config"
 	"github.com/go-packagist/framework/foundation"
+	"github.com/go-packagist/framework/gin"
 	"github.com/go-packagist/framework/hashing"
 	"github.com/go-packagist/framework/support/facades"
 )
@@ -21,6 +22,7 @@ func App() *foundation.Application {
 	})
 
 	app.Register(hashing.NewHashProvider(app))
+	app.Register(gin.NewGinProvider(app))
 
 	return app
 }

@@ -1,16 +1,12 @@
 package main
 
 import (
-	"crypto/md5"
-	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/go-packagist/example/bootstrap"
-	"github.com/go-packagist/framework/support/facades"
 )
 
 func main() {
-	bootstrap.App()
+	app := bootstrap.App()
 
-	fmt.Println(facades.MustMd5Hasher().MustMake("password"))
-	fmt.Printf("%x", md5.Sum([]byte("password")))
-	fmt.Println("\naa")
+	app.MustMake("gin").(*gin.Engine).Run(":8080")
 }
