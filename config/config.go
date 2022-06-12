@@ -4,4 +4,5 @@ func Load() {
 	app()
 	hashing()
 	redis()
+	database()
 }
