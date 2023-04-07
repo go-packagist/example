@@ -8,6 +8,7 @@ import (
 func App() *foundation.Application {
 	app := foundation.NewApplication()
 
+	app.Register(provider.NewDotenvProvider(app.Container))
 	app.Register(provider.NewConfigProvider(app.Container))
 	app.Register(provider.NewHashingProvider(app.Container))
 	app.Register(provider.NewEncryptionProvider(app.Container))

@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"github.com/go-packagist/example/app/framework/facade"
+	"os"
 )
 
 type IndexController struct{}
@@ -15,6 +16,7 @@ func (c *IndexController) Index(ctx *gin.Context) {
 		"message": "Hello World",
 		"hashing": facade.Hash().MustMake("password"),
 		"encrypt": ciphertext,
+		"dotenv":  os.Getenv("APP_NAME"),
 	})
 }
 

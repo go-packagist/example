@@ -1,11 +1,13 @@
 package config
 
 type App struct {
-	Name string
-	Key  string
+	Name    string
+	Key     string
+	EnvPath string
 }
 
 var app = &App{
-	Name: "example",
-	Key:  "EAFBSPAXDCIOGRUVNERQGXPYGPNKYATM",
+	Name:    "example",
+	Key:     "EAFBSPAXDCIOGRUVNERQGXPYGPNKYATM",
+	EnvPath: "./.env",
 }
